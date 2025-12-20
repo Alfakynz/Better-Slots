@@ -38,10 +38,18 @@ dependencies {
 }
 
 processResources {
-    inputs.property 'version', project.version
+    def replaceProperties = new HashMap<String, String>()
+
+    project.properties.each { key, value ->
+        if (value instanceof String) {
+            replaceProperties.put(key, value)
+        }
+    }
+
+    inputs.properties replaceProperties
 
     filesMatching('META-INF/mods.toml') {
-        expand version: inputs.properties.version
+        expand replaceProperties
     }
 }
 
