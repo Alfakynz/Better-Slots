@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "better_slots",
+  "version": "${version}",
+  "name": "Better Slots",
+  "description": "A little mod that improves the inventory slot management.",
+  "authors": [
+    "Alfakynz"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Alfakynz/Better-Slots",
+    "sources": "https://github.com/Alfakynz/Better-Slots"
+  },
+  "license": "MIT",
+  "icon": "assets/better_slots/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.alfakynz.better_slots.fabric.ExampleModFabric"
+    ],
+    "client": [
+      "com.alfakynz.better_slots.fabric.client.ExampleModFabricClient"
+    ]
+  },
+  "mixins": [
+    "better_slots.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.4",
+    "minecraft": ">=1.20.1",
+    "java": ">=17"
+  }
+}

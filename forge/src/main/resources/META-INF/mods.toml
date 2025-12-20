@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+issueTrackerURL = "https://github.com/Alfakynz/Better-Slots/issues"
+license = "MIT"
+
+[[mods]]
+modId = "better_slots"
+version = "${version}"
+displayName = "Better Slots"
+authors = "Alfakynz"
+description = '''
+A little mod that improves the inventory slot management.
+'''
+#logoFile = ""
+
+[[dependencies.better_slots]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.better_slots]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
