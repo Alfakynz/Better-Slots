@@ -16,9 +16,8 @@
   "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "com.alfakynz.better_slots.fabric.BetterSlotsFabric"
-    ]
+    "main": ["com.alfakynz.better_slots.fabric.BetterSlotsFabric"],
+    "modmenu": ["com.alfakynz.better_slots.fabric.config.ModMenuIntegration"]
   },
   "mixins": [
     "better_slots.mixins.json"

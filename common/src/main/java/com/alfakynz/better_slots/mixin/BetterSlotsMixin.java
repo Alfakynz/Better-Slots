@@ -1,6 +1,6 @@
 package com.alfakynz.better_slots.mixin;
 
-import com.alfakynz.better_slots.config.BetterSlotsConfig;
+import com.alfakynz.better_slots.config.Config;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -42,7 +42,7 @@ public abstract class BetterSlotsMixin {
         Item item = stack.getItem();
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
 
-        if (BetterSlotsConfig.get().isItemAllowed(itemId)) {
+        if (Config.get().isItemAllowed(itemId)) {
             ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
 
             // Case 1: offhand is empty -> move the whole stack
@@ -57,7 +57,7 @@ public abstract class BetterSlotsMixin {
             Item offhandItem = offhand.getItem();
             ResourceLocation offhandId = BuiltInRegistries.ITEM.getKey(offhandItem);
 
-            if (offhandId.equals(itemId) && BetterSlotsConfig.get().isItemAllowed(offhandId) && offhand.getCount() < offhand.getMaxStackSize()) {
+            if (offhandId.equals(itemId) && Config.get().isItemAllowed(offhandId) && offhand.getCount() < offhand.getMaxStackSize()) {
                 int transferable = Math.min(
                     stack.getCount(),
                     offhand.getMaxStackSize() - offhand.getCount()

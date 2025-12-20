@@ -13,6 +13,10 @@ architectury {
     forge()
 }
 
+repositories {
+    maven { url "https://maven.shedaniel.me/" }
+}
+
 configurations {
     common {
         canBeResolved = true
@@ -32,6 +36,10 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:$rootProject.forge_version"
+
+    // Dependencies
+    modCompileOnly("me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}")
+    modRuntimeOnly("me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}")
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')

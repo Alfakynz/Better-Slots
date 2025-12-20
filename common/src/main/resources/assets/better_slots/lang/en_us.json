@@ -1,0 +1,9 @@
+{
+  "option.better_slots.settings": "Better Slots Options",
+  "option.better_slots.settings.enable_mod": "Enable Better Slots",
+  "option.better_slots.settings.done": "Done",
+  "option.better_slots.settings.general": "General",
+  "option.better_slots.settings.no": "No",
+  "option.better_slots.settings.yes": "Yes",
+  "modmenu.descriptionTranslation.better_slots": "Removes in-game pop-ups (New Recipe Unlocked and more)"
+}

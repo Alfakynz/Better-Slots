@@ -1,0 +1,9 @@
+{
+  "option.better_slots.settings": "Options de Better Slots",
+  "option.better_slots.settings.done": "Terminé",
+  "option.better_slots.settings.enable_mod": "Activer Better Slots",
+  "option.better_slots.settings.general": "Général",
+  "option.better_slots.settings.no": "Non",
+  "option.better_slots.settings.yes": "Oui",
+  "modmenu.descriptionTranslation.better_slots": "Supprime les pop-ups en jeu (\"Nouvelle(s) Recette(s)\" and more)"
+}

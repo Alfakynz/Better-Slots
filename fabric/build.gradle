@@ -7,6 +7,11 @@ architectury {
     fabric()
 }
 
+repositories {
+    maven { url "https://maven.shedaniel.me/" }
+    maven { url "https://maven.terraformersmc.com/" }
+}
+
 configurations {
     common {
         canBeResolved = true
@@ -29,6 +34,11 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
+
+    // Dependencies
+    modCompileOnly("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}")
+    modRuntimeOnly("me.shedaniel.cloth:cloth-config-fabric:${cloth_config_version}")
+    modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
