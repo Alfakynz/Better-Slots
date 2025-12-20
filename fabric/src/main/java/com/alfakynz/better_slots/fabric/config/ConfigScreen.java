@@ -58,7 +58,7 @@ public class ConfigScreen {
                         .setSaveConsumer(newValue -> {
                             Config.get().items.clear();
                             for (String id : newValue) {
-                                if (ResourceLocation.isValidResourceLocation(id)) {
+                                if (ResourceLocation.tryParse(id) != null) {
                                     Config.get().items.add(id);
                                 }
                             }

@@ -27,9 +27,7 @@ A little mod that improves the inventory slot management.
 | 1.20.4    | ✅    | ✅    | ✅       | ✅   |
 | 1.20.5    | ✅    | ❌    | ❌       | ✅   |
 | 1.20.6    | ✅    | ❌    | ❌       | ✅   |
-| 1.21.x    | ⚠️    | ❌    | ❌       | ⚠️   |
-
-⚠️ = Can't save settings yet
+| 1.21.x    | ✅    | ❌    | ❌       | ✅   |
 
 Fabric >= 0.17.0 <br />
 Forge >= 47.1.47
