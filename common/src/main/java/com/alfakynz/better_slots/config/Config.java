@@ -8,20 +8,21 @@ import net.minecraft.resources.ResourceLocation;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Config {
 
     public boolean enable_mod = true;
-    public Set<String> items = new HashSet<>();
+    public Set<String> items = new LinkedHashSet<>();
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static Config INSTANCE;
 
     private static Path CONFIG_PATH;
 
-    private static final Set<String> DEFAULT_ITEMS = Set.of(
+    public static final List<String> DEFAULT_ITEMS = List.of(
             "minecraft:torch",
             "minecraft:soul_torch",
             "minecraft:lantern",
@@ -48,8 +49,8 @@ public class Config {
 
             INSTANCE = GSON.fromJson(Files.readString(configPath), Config.class);
 
-            if (INSTANCE.items == null) {
-                INSTANCE.items = new HashSet<>(DEFAULT_ITEMS);
+            if (INSTANCE.items == null || INSTANCE.items.isEmpty()) {
+                INSTANCE.items = new LinkedHashSet<>(DEFAULT_ITEMS);
             }
 
         } catch (IOException e) {

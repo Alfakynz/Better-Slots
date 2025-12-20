@@ -3,6 +3,8 @@
   "option.better_slots.settings.done": "Hecho",
   "option.better_slots.settings.enable_mod": "Permitir Better Slots",
   "option.better_slots.settings.general": "General",
+  "option.better_slots.settings.items.list": "Lista de objetos",
+  "option.better_slots.settings.items.tooltip": "Usar formato: mod:item",
   "option.better_slots.settings.no": "No",
   "option.better_slots.settings.yes": "Sí",
   "modmenu.descriptionTranslation.better_slots": "Elimina las ventanas emergentes del juego (Nueva receta desbloqueada y más)"
