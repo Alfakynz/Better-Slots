@@ -1,20 +1,24 @@
 package com.alfakynz.better_slots.mixin;
 
+import com.alfakynz.better_slots.config.BetterSlotsConfig;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+
 @Mixin(AbstractContainerMenu.class)
-public abstract class TorchSlot {
+public abstract class BetterSlotsMixin {
 
     @Shadow
     public abstract Slot getSlot(int index);
@@ -35,7 +39,10 @@ public abstract class TorchSlot {
         ItemStack stack = slot.getItem();
         if (stack.isEmpty()) return;
 
-        if (stack.getItem() == Items.TORCH) {
+        Item item = stack.getItem();
+        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+
+        if (BetterSlotsConfig.get().isItemAllowed(itemId)) {
             ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
 
             // Case 1: offhand is empty -> move the whole stack
@@ -47,7 +54,10 @@ public abstract class TorchSlot {
             }
 
             // Case 2: offhand already contains torches -> try to merge stacks
-            if (offhand.getItem() == Items.TORCH && offhand.getCount() < offhand.getMaxStackSize()) {
+            Item offhandItem = offhand.getItem();
+            ResourceLocation offhandId = BuiltInRegistries.ITEM.getKey(offhandItem);
+
+            if (offhandId.equals(itemId) && BetterSlotsConfig.get().isItemAllowed(offhandId) && offhand.getCount() < offhand.getMaxStackSize()) {
                 int transferable = Math.min(
                     stack.getCount(),
                     offhand.getMaxStackSize() - offhand.getCount()

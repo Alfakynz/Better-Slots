@@ -15,6 +15,7 @@ A little mod that improves the inventory slot management.
 ## ✨ Features
 
 - Torches are automatically placed in the off-hand
+- Includes settings to configure which items can be easily placed in the off-hand
 
 ## 🔄 Versions
 

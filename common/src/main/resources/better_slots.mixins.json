@@ -6,7 +6,7 @@
   "client": [
   ],
   "mixins": [
-    "TorchSlot"
+    "BetterSlotsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
