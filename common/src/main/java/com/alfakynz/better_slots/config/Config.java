@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class Config {
 
-    public boolean enable_mod = true;
+    public boolean isEnable = true;
     public Set<String> items = new LinkedHashSet<>();
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
@@ -71,6 +71,6 @@ public class Config {
     }
 
     public boolean isItemAllowed(ResourceLocation id) {
-        return enable_mod && items.contains(id.toString());
+        return isEnable && items.contains(id.toString());
     }
 }

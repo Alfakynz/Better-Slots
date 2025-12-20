@@ -28,7 +28,7 @@ public class ConfigScreen {
         record Setting(String key, BooleanSupplier getter, Consumer<Boolean> setter, Boolean default_value) {}
 
         Setting[] settings = new Setting[] {
-                new Setting("enable_mod", () -> Config.get().enable_mod, newValue -> Config.get().enable_mod = newValue, true),
+                new Setting("enable_mod", () -> Config.get().isEnable, newValue -> Config.get().isEnable = newValue, true),
         };
 
         for (Setting setting : settings) {

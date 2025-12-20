@@ -31,6 +31,7 @@ public abstract class BetterSlotsMixin {
             Player player,
             CallbackInfo ci
     ) {
+        if (!Config.get().isEnable) return;
         if (clickType != ClickType.QUICK_MOVE) return;
 
         Slot slot = this.getSlot(slotId);
@@ -38,6 +39,13 @@ public abstract class BetterSlotsMixin {
 
         ItemStack stack = slot.getItem();
         if (stack.isEmpty()) return;
+
+        if (slotId == 45) { // 45 is the offhand slot index
+            ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
+            if (!offhand.isEmpty() && ItemStack.isSameItem(stack, offhand)) {
+                return;
+            }
+        }
 
         Item item = stack.getItem();
         ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
