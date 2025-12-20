@@ -17,10 +17,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.alfakynz.better_slots.fabric.ExampleModFabric"
-    ],
-    "client": [
-      "com.alfakynz.better_slots.fabric.client.ExampleModFabricClient"
+      "com.alfakynz.better_slots.fabric.BetterSlotsFabric"
     ]
   },
   "mixins": [

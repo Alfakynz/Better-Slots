@@ -5,9 +5,8 @@ import net.minecraftforge.fml.common.Mod;
 import com.alfakynz.better_slots.BetterSlots;
 
 @Mod(BetterSlots.MOD_ID)
-public final class ExampleModForge {
-    public ExampleModForge() {
-        // Run our common setup.
+public final class BetterSlotsForge {
+    public BetterSlotsForge() {
         BetterSlots.init();
     }
 }
