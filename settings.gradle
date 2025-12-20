@@ -11,5 +11,4 @@ rootProject.name = 'better-slots'
 
 include 'common'
 include 'fabric'
-include 'forge'
 include 'neoforge'
