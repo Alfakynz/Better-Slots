@@ -25,9 +25,17 @@ public class Config {
     public static final List<String> DEFAULT_ITEMS = List.of(
             "minecraft:torch",
             "minecraft:soul_torch",
+            "minecraft:copper_torch",
             "minecraft:lantern",
             "minecraft:soul_lantern",
-            "minecraft:candle"
+            "minecraft:copper_lantern",
+            "minecraft:exposed_copper_lantern",
+            "minecraft:weathered_copper_lantern",
+            "minecraft:oxidized_copper_lantern",
+            "minecraft:waxed_copper_lantern",
+            "minecraft:waxed_exposed_copper_lantern",
+            "minecraft:waxed_weathered_copper_lantern",
+            "minecraft:waxed_oxidized_copper_lantern"
     );
 
     public static Config get() {
