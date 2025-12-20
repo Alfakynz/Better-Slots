@@ -24,15 +24,14 @@ A little mod that improves the inventory slot management.
 | 1.20.1    | ✅    | ✅    | ✅       | ✅   |
 | 1.20.2    | ✅    | ✅    | ❌       | ✅   |
 | 1.20.3    | ✅    | ✅    | ❌       | ✅   |
-| 1.20.4    | ✅    | ✅    | ❌       | ✅   |
+| 1.20.4    | ✅    | ✅    | ✅       | ✅   |
 | 1.20.5    | ✅    | ❌    | ❌       | ✅   |
 | 1.20.6    | ✅    | ❌    | ❌       | ✅   |
-| 1.21.x    | ⚠️    | ❌    | ❌       | ⚠️   |
-
-⚠️ = Can't save settings yet
+| 1.21.x    | ✅    | ❌    | ❌       | ✅   |
 
 Fabric >= 0.17.0 <br />
-Forge >= 47.1.47
+Forge >= 47.1.47 <br />
+NeoForge >= 20.4.251
 
 # ⬇️ Installation
 
@@ -52,7 +51,7 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Compatibility with other Minecraft versions (for Neo/Forge)
+- Maybe tag support
 
 ## 📦 Modpack
 

@@ -3,9 +3,7 @@ package com.alfakynz.better_slots.mixin;
 import com.alfakynz.better_slots.config.Config;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ClickType;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -34,8 +32,15 @@ public abstract class BetterSlotsMixin {
         if (!Config.get().isEnable) return;
         if (clickType != ClickType.QUICK_MOVE) return;
 
+        AbstractContainerMenu menu = (AbstractContainerMenu)(Object) this;
+        if (!(menu instanceof InventoryMenu)) return;
+
         Slot slot = this.getSlot(slotId);
         if (slot == null) return;
+
+        if (slot instanceof ResultSlot) return;
+
+        if (slot.container instanceof CraftingContainer) return;
 
         ItemStack stack = slot.getItem();
         if (stack.isEmpty()) return;
