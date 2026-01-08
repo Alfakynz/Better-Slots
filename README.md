@@ -14,7 +14,7 @@ A little mod that improves the inventory slot management.
 
 ## ✨ Features
 
-- Torches are automatically placed in the off-hand
+- Torches are automatically placed in the off-hand when shift-clicking
 - Includes settings to configure which items can be easily placed in the off-hand (with [ModMenu](https://modrinth.com/mod/mOgUt4GM) and [Cloth Config API](https://modrinth.com/mod/9s6osm5g))
 
 ## 🔄 Versions
