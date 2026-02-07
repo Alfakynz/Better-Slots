@@ -37,6 +37,7 @@ NeoForge >= 20.4.251
 
 1. Download the mod from [Modrinth](https://modrinth.com/project/FfJwv52l) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/better-slots)
 2. Place it into your `mods` directory
+3. To play online, the server also needs to have the mod installed
 
 ## 🤝 Contributing
 
@@ -52,6 +53,7 @@ If you have any questions, feel free to join the [Discord server](https://discor
 ## 🚀 Planned Features
 
 - Maybe tag support
+- Only client side
 
 ## 📦 Modpack
 
