@@ -14,7 +14,7 @@ A little mod that improves the inventory slot management.
 
 ## ✨ Features
 
-- Torches are automatically placed in the off-hand
+- Torches are automatically placed in the off-hand when shift-clicking
 - Includes settings to configure which items can be easily placed in the off-hand (with [ModMenu](https://modrinth.com/mod/mOgUt4GM) and [Cloth Config API](https://modrinth.com/mod/9s6osm5g))
 
 ## 🔄 Versions
@@ -30,12 +30,14 @@ A little mod that improves the inventory slot management.
 | 1.21.x    | ✅    | ❌    | ❌       | ✅   |
 
 Fabric >= 0.17.0 <br />
-Forge >= 47.1.47
+Forge >= 47.1.47 <br />
+NeoForge >= 20.4.251
 
 # ⬇️ Installation
 
 1. Download the mod from [Modrinth](https://modrinth.com/project/FfJwv52l) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/better-slots)
 2. Place it into your `mods` directory
+3. To play online, the server also needs to have the mod installed
 
 ## 🤝 Contributing
 
@@ -50,7 +52,8 @@ If you have any questions, feel free to join the [Discord server](https://discor
 
 ## 🚀 Planned Features
 
-- Compatibility with other Minecraft versions (for Neo/Forge)
+- Maybe tag support
+- Only client side
 
 ## 📦 Modpack
 
