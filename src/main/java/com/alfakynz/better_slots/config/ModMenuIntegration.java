@@ -1,4 +1,4 @@
-package com.alfakynz.better_slots.fabric.config;
+package com.alfakynz.better_slots.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;

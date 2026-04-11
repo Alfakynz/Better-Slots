@@ -1,12 +1,11 @@
-package com.alfakynz.better_slots.neoforge.config;
+package com.alfakynz.better_slots.config;
 
-import com.alfakynz.better_slots.config.Config;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import me.shedaniel.clothconfig2.api.AbstractConfigListEntry;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
@@ -58,7 +57,7 @@ public class ConfigScreen {
                         .setSaveConsumer(newValue -> {
                             Config.get().items.clear();
                             for (String id : newValue) {
-                                if (ResourceLocation.tryParse(id) != null) {
+                                if (Identifier.tryParse(id) != null) {
                                     Config.get().items.add(id);
                                 }
                             }

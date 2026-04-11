@@ -1,9 +1,9 @@
 package com.alfakynz.better_slots.config;
 
-import com.alfakynz.better_slots.Constants;
+import com.alfakynz.better_slots.BetterSlots;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -63,7 +63,7 @@ public class Config {
 
         } catch (IOException e) {
             INSTANCE = new Config();
-            Constants.LOG.error("Failed to load config file {}", configPath, e);
+            BetterSlots.LOG.error("Failed to load config file {}", configPath, e);
         }
     }
 
@@ -74,11 +74,11 @@ public class Config {
             Files.createDirectories(CONFIG_PATH.getParent());
             Files.writeString(CONFIG_PATH, GSON.toJson(INSTANCE));
         } catch (IOException e) {
-            Constants.LOG.error("Failed to save config file {}", CONFIG_PATH, e);
+            BetterSlots.LOG.error("Failed to save config file {}", CONFIG_PATH, e);
         }
     }
 
-    public boolean isItemAllowed(ResourceLocation id) {
+    public boolean isItemAllowed(Identifier id) {
         return isEnable && items.contains(id.toString());
     }
 }

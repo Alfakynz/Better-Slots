@@ -16,15 +16,14 @@
   "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.alfakynz.better_slots.fabric.BetterSlotsFabric"],
-    "modmenu": ["com.alfakynz.better_slots.fabric.config.ModMenuIntegration"]
+    "main": ["com.alfakynz.better_slots.BetterSlots"],
+    "modmenu": ["com.alfakynz.better_slots.config.ModMenuIntegration"]
   },
   "mixins": [
     "better_slots.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=${fabric_loader_version}",
     "minecraft": ">=${minecraft_version}",
-    "java": ">=21"
+    "java": ">=25"
   }
 }

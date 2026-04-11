@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 
 @Mixin(AbstractContainerMenu.class)
@@ -23,19 +23,19 @@ public abstract class BetterSlotsMixin {
 
     @Inject(method = "clicked", at = @At("HEAD"), cancellable = true)
     private void onClicked(
-            int slotId,
-            int dragType,
-            ClickType clickType,
+            int slotIndex,
+            int buttonNum,
+            ContainerInput containerInput,
             Player player,
             CallbackInfo ci
     ) {
         if (!Config.get().isEnable) return;
-        if (clickType != ClickType.QUICK_MOVE) return;
+        if (containerInput != ContainerInput.QUICK_MOVE) return;
 
         AbstractContainerMenu menu = (AbstractContainerMenu)(Object) this;
         if (!(menu instanceof InventoryMenu)) return;
 
-        Slot slot = this.getSlot(slotId);
+        Slot slot = this.getSlot(slotIndex);
         if (slot == null) return;
 
         if (slot instanceof ResultSlot) return;
@@ -45,7 +45,7 @@ public abstract class BetterSlotsMixin {
         ItemStack stack = slot.getItem();
         if (stack.isEmpty()) return;
 
-        if (slotId == 45) { // 45 is the offhand slot index
+        if (slotIndex == 45) { // 45 is the offhand slot index
             ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
             if (!offhand.isEmpty() && ItemStack.isSameItem(stack, offhand)) {
                 return;
@@ -53,7 +53,7 @@ public abstract class BetterSlotsMixin {
         }
 
         Item item = stack.getItem();
-        ResourceLocation itemId = BuiltInRegistries.ITEM.getKey(item);
+        Identifier itemId = BuiltInRegistries.ITEM.getKey(item);
 
         if (Config.get().isItemAllowed(itemId)) {
             ItemStack offhand = player.getItemBySlot(EquipmentSlot.OFFHAND);
@@ -68,7 +68,7 @@ public abstract class BetterSlotsMixin {
 
             // Case 2: offhand already contains torches -> try to merge stacks
             Item offhandItem = offhand.getItem();
-            ResourceLocation offhandId = BuiltInRegistries.ITEM.getKey(offhandItem);
+            Identifier offhandId = BuiltInRegistries.ITEM.getKey(offhandItem);
 
             if (offhandId.equals(itemId) && Config.get().isItemAllowed(offhandId) && offhand.getCount() < offhand.getMaxStackSize()) {
                 int transferable = Math.min(
